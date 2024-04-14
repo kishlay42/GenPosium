@@ -14,8 +14,14 @@ import Button from "./Usables/Button";
 import UniInfo from './UniSocial/UniInfo';
 import LearningInfo from './Learning/LearningInfo'
 import ContestInfo from './Contests/ContestInfo';
-
-
+import Signup from './Signup/Signup';
+import Signin from './Signin/Signin';
+import Dashboard from './Dashboard/Dashboard';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import OnlyAdminPrivateRoute from './Post/OnlyAdminPrivateRoute';
+import CreatePost from './Post/CreatePost';
+import UpdatePost from './Post/UpdatePost';
+import PostPage from './Post/PostPage';
 export {
     Header,
     Tabs,
@@ -32,5 +38,13 @@ export {
     Button,
     UniInfo,
     LearningInfo,
-    ContestInfo
+    ContestInfo,
+    Signup,
+    Signin,
+    Dashboard,
+    PrivateRoute,
+    OnlyAdminPrivateRoute,
+    CreatePost,
+    UpdatePost,
+    PostPage
   };

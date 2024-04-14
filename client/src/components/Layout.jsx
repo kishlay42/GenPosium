@@ -1,17 +1,17 @@
-import React from 'react'
-import { Header, Footer, Tabs } from './index'
-import { Outlet } from 'react-router-dom'
-
-
+import React from "react";
+import { Header, Footer, Tabs } from "./index";
+import { Outlet } from "react-router-dom";
+import  ScrollToTop  from "./Usables/ScrollToTop";
 const Layout = () => {
   return (
     <>
-    <Header/>
-    <Tabs/>
-    <Outlet/>
-    <Footer/>
+      <ScrollToTop />
+      <Header />
+      <Tabs />
+      <Outlet />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

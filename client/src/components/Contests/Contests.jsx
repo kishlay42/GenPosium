@@ -5,7 +5,7 @@ const Contests = () => {
   return (
     <>
     <div>
-      <Search />
+      {/* <Search /> */}
       <div className=" my-1 w-3/4 mx-auto ">
         <div className="flex  my-6 flex-wrap">
           <div

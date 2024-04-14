@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 export default function Footer() {
   return (
-    <footer className="bg-purple-50 border-y">
+    <footer className="bg-purple-50 border-y ">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link to="/" className="flex items-center">
               <img
-                src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                className="mr-3 h-16"
+              src="../../genLogo.svg"
+              className="mr-3 h-16"
                 alt="Logo"
               />
             </Link>
@@ -39,10 +39,7 @@ export default function Footer() {
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
                   <a
-                    href="https://github.com/hiteshchoudhary"
-                    className="hover:underline"
-                    target="_blank"
-                    rel="noreferrer"
+          
                   >
                     Github
                   </a>
