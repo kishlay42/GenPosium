@@ -1,13 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 const Tabs = () => {
   return (
     <>
-      <div className="flex flex-wrap w-1/4 mx-auto bg-purple-50 px-2 rounded-xl my-1 ">
+      <div className="flex flex-wrap md:w-1/4 mx-auto bg-blue-50 px-2 rounded-xl my-1 ">
         <div className="w-full">
           <ul
-            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
+            className=" flex mb-0 list-none md:flex-wrap pt-3 pb-4 flex-row"
             role="tablist"
           >
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -15,15 +14,29 @@ const Tabs = () => {
                 to="/uniSocial"
                 className={({
                   isActive,
-                }) => `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal
+                }) => `text-xs hidden md:block font-bold uppercase px-5 py-3 shadow-lg rounded  leading-normal
                    transition ease-in  duration-200
                  ${
                    isActive
-                     ? "text-white bg-orange-600"
-                     : "text-purple-600 bg-white  hover:bg-purple-200"
+                     ? "text-white bg-blue-600"
+                     : "text-blue-600 bg-white  hover:bg-blue-200"
                  }`}
               >
                 UniSocial
+              </NavLink>
+              <NavLink
+                to="/uniSocial"
+                className={({
+                  isActive,
+                }) => `text-xs font-bold md:hidden uppercase px-5 py-3 shadow-lg rounded block leading-normal
+                   transition ease-in  duration-200
+                 ${
+                   isActive
+                     ? "text-white bg-blue-600"
+                     : "text-blue-600 bg-white  hover:bg-blue-200"
+                 }`}
+              >
+                U
               </NavLink>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -31,14 +44,27 @@ const Tabs = () => {
                 to="/contests"
                 className={({
                   isActive,
-                }) => `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal transition ease-in  duration-200 
+                }) => `text-xs hidden md:block font-bold uppercase px-5 py-3 shadow-lg rounded  leading-normal transition ease-in  duration-200 
                 ${
                   isActive
                     ? "text-white bg-blue-600"
-                    : "text-purple-600 bg-white  hover:bg-purple-200"
+                    : "text-blue-600 bg-white  hover:bg-blue-200"
                 }`}
               >
                 Contests
+              </NavLink>
+              <NavLink
+                to="/contests"
+                className={({
+                  isActive,
+                }) => `text-xs font-bold md:hidden uppercase px-5 py-3 shadow-lg rounded block leading-normal transition ease-in  duration-200 
+                ${
+                  isActive
+                    ? "text-white bg-blue-600"
+                    : "text-blue-600 bg-white  hover:bg-blue-200"
+                }`}
+              >
+                C
               </NavLink>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -46,14 +72,27 @@ const Tabs = () => {
                 to="/learning"
                 className={({
                   isActive,
-                }) => `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal transition ease-in  duration-200
+                }) => `text-xs font-bold uppercase px-5 py-3 shadow-lg rounded hidden md:block leading-normal transition ease-in  duration-200
                 ${
                   isActive
-                    ? "text-white bg-green-600"
-                    : "text-purple-600 bg-white  hover:bg-purple-200"
+                    ? "text-white bg-blue-600"
+                    : "text-blue-600 bg-white  hover:bg-blue-200"
                 }`}
               >
                 Learning
+              </NavLink>
+              <NavLink
+                to="/learning"
+                className={({
+                  isActive,
+                }) => `text-xs font-bold md:hidden uppercase px-5 py-3 shadow-lg rounded block leading-normal transition ease-in  duration-200
+                ${
+                  isActive
+                    ? "text-white bg-blue-600"
+                    : "text-blue-600 bg-white  hover:bg-blue-200"
+                }`}
+              >
+                L
               </NavLink>
             </li>
           </ul>

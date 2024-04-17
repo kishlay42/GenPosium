@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store.js";
 import { PersistGate } from "redux-persist/integration/react";
@@ -14,9 +13,6 @@ import {
   UniSocial,
   Learning,
   Contests,
-  UniInfo,
-  ContestInfo,
-  LearningInfo,
   Signup,
   Signin,
   Dashboard,
@@ -48,9 +44,6 @@ const router = createBrowserRouter(
       <Route path="uniSocial" element={<UniSocial />} />
       <Route path="learning" element={<Learning />} />
       <Route path="contests" element={<Contests />} />
-      <Route path="uniInfo" element={<UniInfo />} />
-      <Route path="contestInfo" element={<ContestInfo />} />
-      <Route path="learningInfo" element={<LearningInfo />} />
       <Route element={<PrivateRoute />}>
         <Route path="dashboard" element={<Dashboard />} />
       </Route>

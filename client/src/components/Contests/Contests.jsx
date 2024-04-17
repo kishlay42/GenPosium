@@ -1,131 +1,111 @@
 import React from "react";
-import {Search,Cards,Button} from "../index"
+import { Button } from "../index";
+import PostCard from "../Post/PostCard";
+import { useEffect, useState } from "react";
 
 const Contests = () => {
+  const [trendPosts, setTrendPosts] = useState(null);
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await fetch("/api/post/getPosts?category=contest&limit=3");
+      const data = await res.json();
+      setPosts(data.posts);
+    };
+    fetchPosts();
+  }, []);
+  useEffect(() => {
+    try {
+      const fetchTrendPosts = async () => {
+        const res = await fetch(
+          `/api/post/getposts?category=contest&limit=2`
+        );
+        const data = await res.json();
+        if (res.ok) {
+          setTrendPosts(data.posts);
+        }
+      };
+      fetchTrendPosts();
+    } catch (error) {
+      console.log(error.message);
+    }
+  }, []);
   return (
     <>
-    <div>
-      {/* <Search /> */}
-      <div className=" my-1 w-3/4 mx-auto ">
-        <div className="flex  my-6 flex-wrap">
-          <div
-            className="  border w-auto flex-1 flex flex-col px-2 py-1  rounded-xl border-orange-50 bg-blue-200
-          -200 mx-1"
-          >
-            <div className="py-1 px-2 text-blue-600 font-bold  text-2xl">
-              <p>Trending Now </p>
+      <div>
+        <div className=" my-1 mx-auto sm:w-3/4 sm:mx-auto ">
+          <div className="flex  my-6 flex-wrap flex-col sm:flex-row">
+            <div
+              className="  border sm:w-2/4
+            flex-1 flex flex-col px-4  py-3 sm:px-2 sm:py-1  sm:rounded-xl  border-orange-50 bg-[url('https://i.pinimg.com/564x/d5/5c/28/d55c28b35d6d19ac53bc06dff4f2551d.jpg')] bg-cover sm:mx-1 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+            >
+              <div className="py-1 px-2 text-blue-600 font-bold  text-2xl">
+                <p>Trending Now </p>
+              </div>
+              <div className="flex flex-col md:w-11/12 md:ml-6 sm:flex-row gap-5 md:gap-10  ">
+                {trendPosts &&
+                  trendPosts.map((post) => (
+                    <PostCard key={post._id} post={post} />
+                  ))}
+              </div>
             </div>
-            <div className="flex">
-              <Cards
-                title="Hack_17 Athon"
-                buttonText="Check Out"
-                image="https://i.pinimg.com/564x/b7/eb/01/b7eb017b13c20e241fcfb190cbec18a4.jpg"
-                titleColor="text-blue-600"
-                borderColor="border-blue-700"
-                btnColor="bg-blue-700"
-                btnHoverColor="hover:bg-blue-800"
-              />
-              <Cards
-                title="Natyachandra 2024"
-                buttonText="Check Out"
-                image="https://i.pinimg.com/564x/56/2a/79/562a79c466467a5bbe061581405741ff.jpg"
-                titleColor="text-blue-600"
-                borderColor="border-blue-700"
-                btnColor="bg-blue-700"
-                btnHoverColor="hover:bg-blue-800"              />
-            </div>
-          </div>
-          <div className=" w-1/3 flex  border border-blue-700 mx-1 rounded-xl">
-            <div className="pt-52 bg-local rounded-xl  bg-[url('https://i.pinimg.com/564x/15/0a/cd/150acdfa1b127ff36c33448a4e0cb3b4.jpg')] bg-cover  bg-no-repeat ">
-              <h1 class=" px-3 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-blue-500">
-                Advertise Your Contest.
-              </h1>
-              <Button text="Add Contest"
+            <div className=" sm:w-1/3 flex  border border-blue-700 sm:mx-1 sm:rounded-xl">
+              <div className="pt-52  bg-local sm:rounded-xl  bg-[url('https://i.pinimg.com/564x/90/23/80/902380c9468ab6caa1be63a3ed700689.jpg')] bg-cover  bg-no-repeat ">
+                <h1 class=" px-3 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-blue-500">
+                  Advertise Your<br/> Contest.
+                </h1>
+                <Button
+                  text="Add Contest"
                   hoverColor="bg-blue-500"
                   btnTextColor="text-blue-600"
                   btnBorderColor="border-blue-600"
-                  />
+                />
+              </div>
             </div>
-          </div>
-          {/* Newly added */}
-          <div className="flex  mt-6">
-            <Cards
-              title="Indian Art Season-12"
-              buttonText="Check Out"
-              image="https://artcontest.in/wp-content/uploads/2021/03/PicsArt_03-03-04.24.07.png"
-              titleColor="text-blue-600"
-              borderColor="border-blue-700"
-              btnColor="bg-blue-700"
-              btnHoverColor="hover:bg-blue-800"
-            />
-            <Cards
-              title="Hackaton 2024"
-              buttonText="Check Out"
-              image="https://i.pinimg.com/564x/6f/b4/49/6fb449c1b545bd3f9384dc82dc75b1b3.jpg"
-              titleColor="text-blue-600"
-              borderColor="border-blue-700"
-              btnColor="bg-blue-700"
-              btnHoverColor="hover:bg-blue-800"
-            />
-            <Cards
-              title="Speak India 2024"
-              buttonText="Check Out"
-              image="https://www.speakforindia.in/images/logo.png"
-              titleColor="text-blue-600"
-              borderColor="border-blue-700"
-              btnColor="bg-blue-700"
-              btnHoverColor="hover:bg-blue-800"
-            />
-          </div>
-          <div className="flex  flex-wrap my-8">
-            <div className=" w-1/3 flex  border border-blue-700 mx-1 rounded-xl">
-              <div className=" pt-40 bg-local rounded-xl  bg-[url('https://i.pinimg.com/564x/c3/40/ae/c340ae7b05e65a4e29d916b09f5f6f42.jpg')] bg-cover bg-no-repeat ">
-                <div className=" ">
-                  <h1 class=" px-3 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-white  ">
-                    Explore More Upcoming Contests.
-                  </h1>
-                  <Button text="Explore"
-                  hoverColor="bg-black"
-                  btnTextColor="text-white"
-                  btnBorderColor="border-white"
-                  />
+            {/* Newly added */}
+            <div className="flex  sm:mt-6   ">
+              <div className="flex flex-col mt-3 gap-3 px-3 sm:flex-row sm:gap-5 sm:w-5/6 ">
+                {posts.map((post) => (
+                  <PostCard key={post._id} post={post} />
+                ))}
+              </div>
+            </div>
+            <div className="sm:flex  sm:flex-wrap sm:my-8">
+              <div className=" sm:w-1/3 flex  pt-2 sm:mx-1 rounded-xl">
+                <div className=" pt-80 sm:pt-36 bg-local sm:rounded-xl  bg-[url('https://i.pinimg.com/564x/c3/40/ae/c340ae7b05e65a4e29d916b09f5f6f42.jpg')] bg-cover bg-no-repeat ">
+                  <div className=" ">
+                    <h1 class=" px-3 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-white  ">
+                      Explore More Upcoming Contests.
+                    </h1>
+                    <Button
+                      text="Explore"
+                      hoverColor="bg-black"
+                      btnTextColor="text-white"
+                      btnBorderColor="border-white"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            {/* Most Liked */}
-            <div
-              className="  border w-auto flex-1 flex flex-col px-2 py-1  rounded-xl border-blue-50 bg-blue-200
-          -200 mx-1"
-            >
-              <div className="py-1 px-2 text-blue-500 font-bold  text-2xl">
-                <p>Upcoming Contests </p>
-              </div>
-              <div className="flex">
-                <Cards
-                  title="LPU One-India 2024"
-                  buttonText="Check Out"
-                  image="https://i.pinimg.com/564x/67/82/8a/67828acfc500260b147194c197b7ecea.jpg"
-                  titleColor="text-blue-600"
-                  borderColor="border-blue-700"
-                  btnColor="bg-blue-700"
-                  btnHoverColor="hover:bg-blue-800"
-                />
-                <Cards
-                  title="SIH 2024"
-                  buttonText="Check Out"
-                  image="https://th.bing.com/th/id/OIP.TyoocYImMfbLurPQ3uyrXAAAAA?w=284&h=300&rs=1&pid=ImgDetMain"
-                  titleColor="text-blue-600"
-                  borderColor="border-blue-700"
-                  btnColor="bg-blue-700"
-                  btnHoverColor="hover:bg-blue-800"
-                />
+              {/* Most Liked */}
+              <div
+                className=" border sm:w-1/2 flex-1 flex flex-col px-2  sm:py-1  sm:rounded-xl border-blue-50 bg-[url('https://i.pinimg.com/564x/78/38/e0/7838e0ba96b5e82a1fe516af74d329c4.jpg')] bg-cover sm:mx-1"
+              >
+                <div className="py-1 px-2 text-blue-500 font-bold  text-2xl">
+                  <p>Upcoming Contests </p>
+                </div>
+                <div className="flex flex-col  md:w-11/12 md:ml-6 sm:flex-row gap-5 md:gap-10  ">
+                  {trendPosts &&
+                    trendPosts.map((post) => (
+                      <PostCard key={post._id} post={post} />
+                    ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </>
+    </>
   );
 };
 

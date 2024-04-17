@@ -11,9 +11,6 @@ import Carousel from './Carousel/Carousel';
 import Search from './Search/Search';
 import Cards from "./Cards/Cards";
 import Button from "./Usables/Button";
-import UniInfo from './UniSocial/UniInfo';
-import LearningInfo from './Learning/LearningInfo'
-import ContestInfo from './Contests/ContestInfo';
 import Signup from './Signup/Signup';
 import Signin from './Signin/Signin';
 import Dashboard from './Dashboard/Dashboard';
@@ -36,9 +33,6 @@ export {
     Search,
     Cards,
     Button,
-    UniInfo,
-    LearningInfo,
-    ContestInfo,
     Signup,
     Signin,
     Dashboard,
