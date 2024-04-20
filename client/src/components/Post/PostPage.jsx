@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "./CommentSection";
 import PostCard from './PostCard';
+import { FaHeart } from "react-icons/fa";
+import { useSelector } from "react-redux";
+
+
 
 
 export default function PostPage() {
@@ -11,6 +15,7 @@ export default function PostPage() {
   const [error, setError] = useState(false);
   const [post, setPost] = useState(null);
   const [recentPosts, setRecentPosts] = useState(null);
+  const { currentUser } = useSelector((state) => state.user);
 
 
   useEffect(() => {
@@ -50,6 +55,26 @@ export default function PostPage() {
       console.log(error.message);
     }
   }, []);
+  const handleLike = async (postId) => {
+    try {
+      if (!currentUser) {
+        navigate("/sign-in");
+        return;
+      }
+      const res = await fetch(`/api/post/likepost/${postId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setPost(data);
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   if (loading)
     return (
@@ -70,6 +95,28 @@ export default function PostPage() {
           {post && post.category}
         </Button>
       </Link>
+      <div className="flex items-center justify-center gap-2 mt-5">
+        {/* <span>{post && post.numberOfLikes}</span> */}
+        <Button
+          color="gray"
+          pill
+          size="xs"
+          onClick={() => handleLike(post._id)}
+          className={`text-gray-400 hover:text-red-500 ${
+            currentUser &&
+            post.likes.includes(currentUser._id) &&
+            '!text-red-500'
+          }`}
+        > 
+      <FaHeart />
+        </Button>
+        <p className='text-gray-400'>
+                {post.numberOfLikes > 0 &&
+                  post.numberOfLikes +
+                    ' ' +
+                    (post.numberOfLikes === 1 ? 'like' : 'likes')}
+              </p>
+      </div>
       <img
         src={post && post.image}
         alt={post && post.title}

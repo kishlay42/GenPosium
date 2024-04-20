@@ -1,57 +1,51 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CallToAction from '../Usables/CallToAction';
-import { useEffect, useState } from 'react';
-import PostCard from '../Post/PostCard';
-
+import { useEffect, useState } from "react";
+import LotusCanvas from "../canvas/Lotus";
+// import BallCanvas from "../canvas/Ball";
 export default function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    
     const fetchPosts = async () => {
-      const res = await fetch('/api/post/getPosts?');
+      const res = await fetch("/api/post/getPosts?");
       const data = await res.json();
       setPosts(data.posts);
     };
     fetchPosts();
   }, []);
   return (
-<div>
-      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto  '>
-        <h1 className='text-3xl font-bold lg:text-6xl'>Welcome to Genposium</h1>
-        <p className='text-gray-500 text-xs sm:text-sm'>
+    <div>
+      <div className="flex flex-col gap-12 pb-28 px-3 max-w-6xl mx-auto  ">
+        <div className="flex flex-row  items-center">
+          <div>
+            <h1 className="text-3xl font-bold lg:text-6xl">Welcome to</h1>
+            <h1 className=" md:ml-8 text-3xl font-bold lg:text-7xl bg-gradient-to-r from-violet-600 to-pink-600 bg-clip-text text-transparent">
+              GenPosium
+            </h1>
+          </div>
+          <div className="">
+            <LotusCanvas />
+          </div>
+        </div>
+
+        <p className="text-gray-500 text-xs sm:text-sm">
           Here you'll find a variety of articles and tutorials on topics such as
           web development, software engineering, and programming languages.
         </p>
-        <Link
-          to='/search'
-          className='text-xs sm:text-sm text-blue-500 font-bold hover:underline'
+        {/* <Link
+          to="/search"
+          className="text-xs sm:text-sm text-blue-500 font-bold hover:underline"
         >
           View all posts
-        </Link>
+        </Link> */}
       </div>
-      <div className='p-3 bg-amber-100 dark:bg-slate-700'>
-        {/* <CallToAction /> */}
+      <div className="px-4 w-3/4 pl-10 gap-24 mx-auto rounded-xl  flex flex-row  bg-red-100 dark:bg-slate-700">
+       
+        </div>
+        {/* <BallCanvas /> */}
       </div>
-
-      {/* <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7'>
-        {posts && posts.length > 0 && (
-          <div className='flex flex-col gap-6'>
-            <h2 className='text-2xl font-semibold text-center'>Recent Posts</h2>
-            <div className='flex flex-wrap gap-4'>
-              {posts.map((post) => (
-                <PostCard key={post._id} post={post} />
-              ))}
-            </div>
-            <Link
-              to={'/search'}
-              className='text-lg text-blue-500 hover:underline text-center'
-            >
-              View all posts
-            </Link>
-          </div>
-        )}
-      </div> */}
-    </div>
+    
   );
 }

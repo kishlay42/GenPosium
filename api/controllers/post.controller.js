@@ -1,6 +1,5 @@
 import Post from '../models/post.model.js';
 import { errorHandler } from '../utils/error.js';
-
 export const create = async (req, res, next) => {
   if (!req.user.isAdmin) {
     return next(errorHandler(403, 'You are not allowed to create a post'));
@@ -98,6 +97,26 @@ export const updatepost = async (req, res, next) => {
       { new: true }
     );
     res.status(200).json(updatedPost);
+  } catch (error) {
+    next(error);
+  }
+};
+export const likepost = async (req, res, next) => {
+  try {
+    const post = await Post.findById(req.params.postId);
+    if (!post) {
+      return next(errorHandler(404, 'Post not found'));
+    }
+    const userIndex=post.likes.indexOf(req.user.id);
+    if(userIndex===-1){
+      post.numberOfLikes+=1;
+      post.likes.push(req.user.id);
+    }else{
+      post.numberOfLikes-=1;
+      post.likes.splice(userIndex,1);
+    }
+    await post.save();
+    res.status(200).json(post);
   } catch (error) {
     next(error);
   }

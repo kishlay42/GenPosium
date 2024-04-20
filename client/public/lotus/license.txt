@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lotus Flower by Geometry Nodes
+* source:	https://sketchfab.com/3d-models/lotus-flower-by-geometry-nodes-398b0f0eafe640a2a3dec98305a8e1c3
+* author:	Shiki (https://sketchfab.com/RyougiShiki)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lotus Flower by Geometry Nodes" (https://sketchfab.com/3d-models/lotus-flower-by-geometry-nodes-398b0f0eafe640a2a3dec98305a8e1c3) by Shiki (https://sketchfab.com/RyougiShiki) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

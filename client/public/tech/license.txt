@@ -1,0 +1,11 @@
+Model Information:
+* title:	Civilization One Intro - Earth
+* source:	https://sketchfab.com/3d-models/civilization-one-intro-earth-95391b2c6788410b9020b43056d034d5
+* author:	MLAB (https://sketchfab.com/MLAB)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Civilization One Intro - Earth" (https://sketchfab.com/3d-models/civilization-one-intro-earth-95391b2c6788410b9020b43056d034d5) by MLAB (https://sketchfab.com/MLAB) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

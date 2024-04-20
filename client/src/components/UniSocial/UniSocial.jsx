@@ -19,7 +19,7 @@ const UniSocial = () => {
     try {
       const fetchTrendPosts = async () => {
         const res = await fetch(
-          `/api/post/getposts?category=uniSocial&limit=2`
+          `/api/post/getposts?category=uniSocial&likes.length()>=2&limit=2`
         );
         const data = await res.json();
         if (res.ok) {
@@ -63,7 +63,7 @@ const UniSocial = () => {
             {/* Newly added */}
             <div className="flex  sm:mt-6   ">
               <div className="flex flex-col mt-3 gap-3 px-3 sm:flex-row sm:gap-5 sm:w-5/6  " >
-                {posts.map((post) => (
+                {posts && posts.map((post) => (
                   <PostCard key={post._id} post={post}   />
                 ))}
               </div>

@@ -9,6 +9,7 @@ import {
   signInFailure,
 } from '../../redux/user/userSlice';
 import OAuth from "../OAuth/OAuth";
+import TechCanvas from "../canvas/Tech";
 const Signin = () => {
   const [formData, setFormData] = useState({});
   const { loading, error: errorMessage } = useSelector((state) => state.user);
@@ -44,21 +45,14 @@ const Signin = () => {
     }
   };
   return (
-    <>
-      <section className="flex flex-col md:flex-row h-screen items-center">
-        <div className="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
-          <img
-            src="https://source.unsplash.com/random"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-
+    <div className="flex flex-row ml-4 ">
+    <div className="w-1/2 "><TechCanvas/></div>
+      <section className="flex flex-col md:flex-row mb-48 mb-10 items-center w-1/3 ">
         <div
-          className="bg-white w-full md:max-w-md lg:max-w-full md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
+          className="bg-white mx-auto rounded-xl w-full md:max-w-md lg:max-w-full md:w-3/4 xl:w-11/12  px-6 lg:px-16 xl:px-12
         flex items-center justify-center"
         >
-          <div className="w-full h-100">
+          <div className="w-full ">
             <h1 className="text-xl md:text-2xl font-bold leading-tight mt-12">
               Sign in to your account
             </h1>
@@ -94,14 +88,14 @@ const Signin = () => {
               </div>
 
 
-              <div className="text-right mt-2">
+              {/* <div className="text-right mt-2">
                 <a
                   href="#"
                   className="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700"
                 >
                   Forgot Password?
                 </a>
-              </div>
+              </div> */}
 
               <button
                 type="submit"
@@ -124,7 +118,7 @@ const Signin = () => {
 
             <OAuth/>
 
-            <div className="mt-8">
+            <div className="mt-8 mb-10">
               Create an account
               <Link
                 to="/signup"
@@ -141,7 +135,7 @@ const Signin = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
