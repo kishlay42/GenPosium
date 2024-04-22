@@ -29,9 +29,9 @@ const Lotus = ({ isMobile }) => {
       {/* <pointLight position={[10, 10, 10]} intensity={0.5} color='orange' /> */}
       <primitive
         object={lotus.scene}
-        scale={isMobile ? 4.5 : 4.5}
-        position={isMobile ? [0, -2.5, -1.5] : [0.5, -2.5, -1.0]}
-        rotation={isMobile ? [-0.05, 1.2, 0] : [-0.05, 1.2, 0]}
+        scale={isMobile ? 3.8 : 3}
+        position={isMobile ? [0, -2.5, -1.5] : [0, -2.75, -1.5]}
+        rotation={isMobile ? [0, 0, 0] : [-0.05, -0.2, 0]}
         // style={isMobile ? {width: "80vw", height: "60vh"}:{ width: "40vw", height: "40vh", padding: "10px" }} // Set the width to 100% of the viewport width
 
 
@@ -40,7 +40,7 @@ const Lotus = ({ isMobile }) => {
   );
 };
 
-const LotusCanvas = () => {
+const LotusMobileCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -66,8 +66,8 @@ const LotusCanvas = () => {
 
   return (
     <Canvas
-      style={{ width: "40vw", height: "40vh", padding: "10px" }} // Set the width to 100% of the viewport width
-    //  className="w-80vw h-60vh " // Set the height to 50vh
+    //   style={{ width: "90vw", height: "30vh", }} // Set the width to 100% of the viewport width
+     className="w-80vw h-60vh " // Set the height to 50vh
       frameloop="demand"
       shadows
       dpr={[1, 2]}
@@ -89,4 +89,4 @@ const LotusCanvas = () => {
   );
 };
 
-export default LotusCanvas;
+export default LotusMobileCanvas;
