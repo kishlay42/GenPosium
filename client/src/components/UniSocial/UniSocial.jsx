@@ -1,9 +1,9 @@
-import React from "react";
 import { Button } from "../index";
 import PostCard from "../Post/PostCard";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {Spinner} from "flowbite-react";
 const UniSocial = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [trendPosts, setTrendPosts] = useState(null);
   const [posts, setPosts] = useState([]);
 
@@ -12,6 +12,8 @@ const UniSocial = () => {
       const res = await fetch("/api/post/getPosts?category=uniSocial&limit=3");
       const data = await res.json();
       setPosts(data.posts);
+      setIsLoading(false); // Set isLoading to false after fetching posts
+
     };
     fetchPosts();
   }, []);
@@ -19,7 +21,7 @@ const UniSocial = () => {
     try {
       const fetchTrendPosts = async () => {
         const res = await fetch(
-          `/api/post/getposts?category=uniSocial&likes.length()>=2&limit=2`
+          `/api/post/getposts?category=uniSocial&likes.length()>=2&limit=2&numberOfLikes=4 `
         );
         const data = await res.json();
         if (res.ok) {
@@ -31,6 +33,10 @@ const UniSocial = () => {
       console.log(error.message);
     }
   }, []);
+  if(isLoading){
+    return <div><Spinner size="xl" /></div>
+
+  }
 
   return (
     <>

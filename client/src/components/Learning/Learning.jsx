@@ -1,8 +1,10 @@
-import React from "react";
 import {  Button } from "../index";
 import PostCard from "../Post/PostCard";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import {Spinner} from "flowbite-react";
+
 const Learning = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [trendPosts, setTrendPosts] = useState(null);
   const [posts, setPosts] = useState([]);
 
@@ -11,6 +13,8 @@ const Learning = () => {
       const res = await fetch("/api/post/getPosts?category=learning&limit=3");
       const data = await res.json();
       setPosts(data.posts);
+      setIsLoading(false); // Set isLoading to false after fetching posts
+
     };
     fetchPosts();
   }, []);
@@ -30,6 +34,10 @@ const Learning = () => {
       console.log(error.message);
     }
   }, []);
+  if(isLoading){
+    return <div><Spinner size="xl" /></div>
+
+  }
   return (
     <>
       <div>

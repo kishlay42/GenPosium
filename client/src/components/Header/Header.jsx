@@ -50,7 +50,7 @@ export default function Header() {
 
   return (
     <div >
-      <Navbar className=" md:w-3/4 md:mx-auto md:rounded-lg">
+      <Navbar className=" md:w-3/4 md:mx-auto md:rounded-lg ">
         <Link
           to="/"
           className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white "

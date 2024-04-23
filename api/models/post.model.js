@@ -1,7 +1,10 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema(
   {
+    // _id: { type: String,
+    //    required: true
+    //    },
     userId: {
       type: String,
       required: true,
@@ -18,11 +21,11 @@ const postSchema = new mongoose.Schema(
     image: {
       type: String,
       default:
-        'https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2021/09/how-to-write-a-blog-post.png',
+        "https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2021/09/how-to-write-a-blog-post.png",
     },
     category: {
       type: String,
-      default: 'uncategorized',
+      default: "uncategorized",
     },
     likes: {
       type: Array,
@@ -41,6 +44,6 @@ const postSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Post = mongoose.model('Post', postSchema);
+const Post = mongoose.model("Post", postSchema);
 
 export default Post;

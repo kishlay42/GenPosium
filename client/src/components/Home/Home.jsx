@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import LotusCanvas from "../canvas/Lotus";
 import LotusMobileCanvas from "../canvas/LotusMobile";
-// import HomeBalls from "./HomeBalls";
+import FlipCard from "../Usables/FlipCard";
 export default function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    
     const fetchPosts = async () => {
       const res = await fetch("/api/post/getPosts?");
       const data = await res.json();
@@ -31,24 +30,12 @@ export default function Home() {
           </div>
         </div>
         <div className="lg:hidden block">
-            <LotusMobileCanvas />
-          </div>
-
-        <p className="text-gray-500 text-xs sm:text-sm">
-          Connect, Compete and Learn
-        </p>
-        {/* <Link
-          to="/search"
-          className="text-xs sm:text-sm text-blue-500 font-bold hover:underline"
-        >
-          View all posts
-        </Link> */}
-      </div>
-      <div className="px-4 w-3/4 pl-10 gap-24 mx-auto rounded-xl  flex flex-row  bg-red-100 dark:bg-slate-700">
-       {/* <HomeBalls /> */}
+          <LotusMobileCanvas />
         </div>
-      
       </div>
-    
+      <div className="mb-16"> <FlipCard /> </div>
+      
+      
+    </div>
   );
 }

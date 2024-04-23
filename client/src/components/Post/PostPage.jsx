@@ -145,8 +145,8 @@ export default function PostPage() {
       </main>
       <div className="hidden  lg:block" >
         <div className=" w-1/4 right-3 bottom-7 flex  border border-red-700 sm:mx-1 sm:rounded-xl fixed ">
-          <div className="pt-52 bg-local sm:rounded-xl  bg-[url('https://i.pinimg.com/564x/ee/fb/4c/eefb4c411e380b70cd31234aa16d9b82.jpg')] bg-cover bg-no-repeat ">
-            <h1 className=" px-3  text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-orange-700">
+          <div className="pt-52 bg-local sm:rounded-xl  bg-[url('https://i.pinimg.com/564x/6a/ba/1b/6aba1b1d91949bf47531459cb77af4e3.jpg')] bg-cover bg-no-repeat ">
+            <h1 className=" px-3  text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl bg-gradient-to-r from-blue-500 via-emerald-600 to-emerald-600 bg-clip-text text-transparent">
               Found an <br/> error.
               <br/>
               Help us correct it.
@@ -156,10 +156,10 @@ export default function PostPage() {
               href="https://discord.gg/rbgRYhqR"
               // target="_blank"
             > <div    
-            className={`relative inline-flex items-center justify-center mx-3 my-3 p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-orange-500   
+            className={`relative inline-flex items-center justify-center mx-3 my-3 p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-blue-500   
             rounded-full shadow-md group`}
           >
-            <span className={`absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-orange-500 group-hover:translate-x-0 ease`}>
+            <span className={`absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-blue-500 group-hover:translate-x-0 ease`}>
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -176,9 +176,9 @@ export default function PostPage() {
               </svg>
             </span>
             <span className={`absolute flex items-center justify-center w-full h-full 
-            text-orange-500
+            text-blue-500
              transition-all duration-300 transform group-hover:translate-x-full ease`}>
-              nenkjcs
+              Correct it
             </span>
             <span className="relative invisible">Button Text</span>
           </div>
