@@ -144,8 +144,8 @@ export default function PostPage() {
         </div>
       </main>
       <div className="hidden  lg:block" >
-        <div className=" w-1/4 right-3 bottom-7 flex  border border-red-700 sm:mx-1 sm:rounded-xl fixed ">
-          <div className="pt-52 bg-local sm:rounded-xl  bg-[url('https://i.pinimg.com/564x/6a/ba/1b/6aba1b1d91949bf47531459cb77af4e3.jpg')] bg-cover bg-no-repeat ">
+        <div className=" w-1/4 right-3 bottom-7 flex  border border-blue-700 sm:mx-1 sm:rounded-xl fixed ">
+          <div className="pt-52 bg-local sm:rounded-xl  bg-[url('https://i.pinimg.com/564x/8f/78/26/8f782623d719230a7bbf68170dd096f5.jpg')] bg-cover bg-no-repeat ">
             <h1 className=" px-3  text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl bg-gradient-to-r from-blue-500 via-emerald-600 to-emerald-600 bg-clip-text text-transparent">
               Found an <br/> error.
               <br/>
@@ -168,7 +168,7 @@ export default function PostPage() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M14 5l7 7m0 0l-7 7m7-7H3"

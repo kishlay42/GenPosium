@@ -23,7 +23,7 @@ const Contests = () => {
     try {
       const fetchTrendPosts = async () => {
         const res = await fetch(
-          `/api/post/getposts?category=contest&limit=2`
+          `/api/post/getposts?category=contest&likes.length()>=2&limit=2&numberOfLikes=1 `
         );
         const data = await res.json();
         if (res.ok) {
@@ -60,10 +60,10 @@ const Contests = () => {
             </div>
             <div className=" sm:w-1/3 flex  border border-blue-700 sm:mx-1 sm:rounded-xl">
               <div className="pt-52  bg-local sm:rounded-xl  bg-[url('https://i.pinimg.com/564x/90/23/80/902380c9468ab6caa1be63a3ed700689.jpg')] bg-cover  bg-no-repeat ">
-                <h1 class=" px-3 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-blue-500">
+                <h1 class=" sm:px-3  pr-40 pl-4 text-6xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-blue-500">
                   Advertise Your<br/> Contest.
                 </h1>
-                <a href="https://discord.gg/rbgRYhqR">   <Button
+                <a href="https://discord.gg/8SBtpbcp" target="_blank">   <Button
                   text="Add Contest"
                   hoverColor="bg-blue-500"
                   btnTextColor="text-blue-600"
@@ -85,10 +85,10 @@ const Contests = () => {
               <div className=" sm:w-1/3 flex  pt-2 sm:mx-1 rounded-xl">
                 <div className=" pt-80 sm:pt-36 bg-local sm:rounded-xl  bg-[url('https://i.pinimg.com/564x/c3/40/ae/c340ae7b05e65a4e29d916b09f5f6f42.jpg')] bg-cover bg-no-repeat ">
                   <div className=" ">
-                    <h1 class=" px-3 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-white  ">
+                    <h1 class=" px-3 text-6xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-white  ">
                       Explore More Upcoming Contests.
                     </h1>
-                    <a href="https://discord.gg/rbgRYhqR"><Button
+                    <a href="https://discord.gg/8SBtpbcp" target="_blank"><Button
                       text="Explore"
                       hoverColor="bg-black"
                       btnTextColor="text-white"

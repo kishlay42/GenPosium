@@ -12,7 +12,7 @@ export default function About() {
                     </div>
                     <div className="md:7/12 lg:w-6/12">
                         <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">
-                            React development is carried out by passionate developers
+                            Join the communtity and Innovate new ideas together
                         </h2>
                         <p className="mt-6 text-gray-600">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis voluptatem

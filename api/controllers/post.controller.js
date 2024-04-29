@@ -128,7 +128,8 @@ export const deletepost = async (req, res, next) => {
     next(error);
   }
 };
-export const updatepost = async (req, res, next) => {
+
+export const updatedPost = async (req, res, next) => {
   if (!req.user.isAdmin || req.user.id !== req.params.userId) {
     return next(errorHandler(403, 'You are not allowed to update this post'));
   }
@@ -150,6 +151,7 @@ export const updatepost = async (req, res, next) => {
     next(error);
   }
 };
+
 export const likepost = async (req, res, next) => {
   try {
     const post = await Post.findById(req.params.postId);

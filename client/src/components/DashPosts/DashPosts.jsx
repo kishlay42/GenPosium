@@ -11,7 +11,8 @@ export default function DashPosts() {
   const [showMore, setShowMore] = useState(true);
 
   const [showModal, setShowModal] = useState(false);
-  const [postIdToDelete, setPostIdToDelete] = useState('');  useEffect(() => {
+  const [postIdToDelete, setPostIdToDelete] = useState('');
+    useEffect(() => {
     const fetchPosts = async () => {
       try {
         const res = await fetch(`/api/post/getposts?userId=${currentUser._id}`);
