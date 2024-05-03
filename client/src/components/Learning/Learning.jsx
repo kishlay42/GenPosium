@@ -62,7 +62,7 @@ const Learning = () => {
                 <h1 class=" px-3  text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-purple-600">
                   Add <br /> Courses For<br/> Others.
                 </h1>
-                <a href="https://discord.gg/8SBtpbcp"><Button
+                <a href="https://discord.gg/T698FNgj"><Button
                   text="Add Course"
                   hoverColor="bg-purple-800"
                   btnTextColor="text-purple-800"
@@ -86,7 +86,7 @@ const Learning = () => {
                     <h1 class=" px-3 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-gray-200  ">
                       Explore Most Popular Courses for Free.
                     </h1>
-                    <a href="https://discord.gg/8SBtpbcp"> <Button
+                    <a href="https://discord.gg/T698FNgj"> <Button
                       text="Explore"
                       hoverColor="bg-yellow-800"
                       btnTextColor="text-gray-50"
