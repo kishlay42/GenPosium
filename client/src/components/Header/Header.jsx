@@ -1,9 +1,7 @@
 import { Avatar, Button, Dropdown, Navbar, TextInput } from "flowbite-react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
-// import { FaMoon, FaSun } from 'react-icons/fa';
 import { useSelector, useDispatch } from "react-redux";
-// import { toggleTheme } from '../redux/theme/themeSlice';
 import { signoutSuccess } from "../../redux/user/userSlice";
 import { useEffect, useState } from "react";
 
@@ -50,7 +48,7 @@ export default function Header() {
 
   return (
     <div >
-      <Navbar className=" md:w-3/4 md:mx-auto md:rounded-lg md:mt-2">
+      <Navbar className=" lg:w-3/4 md:mx-auto md:rounded-lg md:mt-2">
         <Link
           to="/"
           className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white "
@@ -67,18 +65,9 @@ export default function Header() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </form>
-        {/* <Button className="w-12 h-10 hidden lg:block" color="gray" pill>
-          <AiOutlineSearch />
-        </Button> */}
-        <div className="flex gap-2 md:order-2">
-          {/* <Button
-          className='w-12 h-10 hidden sm:inline'
-          color='gray'
-          pill 
-          onClick={() => dispatch(toggleTheme())}
         
-          {theme === 'light' ? <FaSun /> : <FaMoon />}
-        </Button> */}
+        <div className="flex gap-2 md:order-2">
+          
           {currentUser ? (
             <Dropdown
               arrowIcon={false}

@@ -42,26 +42,27 @@ const Contests = () => {
   return (
     <>
       <div>
-        <div className=" my-1 mx-auto sm:w-3/4 sm:mx-auto ">
-          <div className="flex  my-6 flex-wrap flex-col sm:flex-row">
+        <div className="md:ml-20 lg:mx-auto my-1 mx-auto  lg:w-3/4  ">
+          <div className="flex  my-6 flex-wrap flex-col  lg:flex-row ">
             <div
-              className="  border sm:w-2/4
-            flex-1 flex flex-col px-4  py-3 sm:px-2 sm:py-1  sm:rounded-xl  border-orange-50 bg-[url('https://i.pinimg.com/564x/d5/5c/28/d55c28b35d6d19ac53bc06dff4f2551d.jpg')] bg-cover sm:mx-1 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+              className="  border lg:w-2/4 md:w-11/12
+              flex-1 flex flex-col px-4  py-3 md:rounded-xl  md:border-orange-500 border-orange-50 bg-[url('https://i.pinimg.com/564x/d5/5c/28/d55c28b35d6d19ac53bc06dff4f2551d.jpg')] bg-cover shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
             >
-              <div className="py-1 px-2 text-blue-600 font-bold  text-2xl">
+              <div className="py-1 px-2 text-blue-600 font-bold  text-2xl 
+              ">
                 <p>Trending Now </p>
               </div>
-              <div className="flex flex-col md:w-11/12 md:ml-6 sm:flex-row gap-5 md:gap-10  ">
+              <div className="flex flex-col lg:w-11/12  lg:ml-6 md:flex-row gap-5 lg:gap-10  ">
                 {trendPosts &&
                   trendPosts.map((post) => (
                     <PostCard key={post._id} post={post} />
                   ))}
               </div>
             </div>
-            <div className=" sm:w-1/3 flex  border border-blue-700 sm:mx-1 sm:rounded-xl">
-              <div className="pt-52  bg-local sm:rounded-xl  bg-[url('https://i.pinimg.com/564x/90/23/80/902380c9468ab6caa1be63a3ed700689.jpg')] bg-cover  bg-no-repeat ">
-                <h1 class=" sm:px-3  pr-40 pl-4 text-6xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-blue-500">
-                  Advertise Your<br/> Contest.
+            <div className="md:mt-2 lg:mt-0 md:w-11/12 lg:w-1/3 flex  border border-blue-700 md:mx-1 md:rounded-xl">
+              <div className="pt-52  bg-local md:rounded-xl  bg-[url('https://i.pinimg.com/564x/90/23/80/902380c9468ab6caa1be63a3ed700689.jpg')] bg-cover  bg-no-repeat ">
+                <h1 className=" px-3 text-4xl lg:text-5xl md:pr-56 lg:pr-0 font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl text-blue-500  ">
+                  Advertise Your Contest.  
                 </h1>
                 <a href="https://discord.gg/T698FNgj" target="_blank">   <Button
                   text="Add Contest"
@@ -73,19 +74,19 @@ const Contests = () => {
               </div>
             </div>
             {/* Newly added */}
-            <div className="flex  sm:mt-6   ">
-              <div className="flex flex-col mt-3 gap-3 px-3 sm:flex-row sm:gap-5 sm:w-5/6 ">
+            <div className="flex md:mt-6 md:px-28 lg:px-0 lg:w-full ">
+              <div className="flex flex-col lg:flex-row   mt-3 gap-3 px-3 lg:px-0 md:flex-col md:gap-5 lg:w-full ">
                 {posts.map((post) => (
                   <PostCard key={post._id} post={post} />
                 ))}
               </div>
             </div>
             {/* Most Liked */}
-            <div className="sm:flex  sm:flex-wrap sm:my-8">
-              <div className=" sm:w-1/3 flex  pt-2 sm:mx-1 rounded-xl">
-                <div className=" pt-80 sm:pt-36 bg-local sm:rounded-xl  bg-[url('https://i.pinimg.com/564x/c3/40/ae/c340ae7b05e65a4e29d916b09f5f6f42.jpg')] bg-cover bg-no-repeat ">
-                  <div className=" ">
-                    <h1 class=" px-3 text-6xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-white  ">
+            <div className="md:flex  md:flex-wrap md:my-8 md:flex-col lg:flex-row lg:w-full 
+            " >
+              <div className=" lg:w-1/3 md:w-4/6 flex  pt-2 md:pt-0 md:mx-1 rounded-xl">
+                <div className="pt-80 md:pt-36 bg-local md:rounded-xl  bg-[url('https://i.pinimg.com/564x/c3/40/ae/c340ae7b05e65a4e29d916b09f5f6f42.jpg')] bg-cover bg-no-repeat">
+                    <h1 className=" px-3 text-4xl lg:text-5xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl text-white">
                       Explore More Upcoming Contests.
                     </h1>
                     <a href="https://discord.gg/T698FNgj" target="_blank"><Button
@@ -94,18 +95,16 @@ const Contests = () => {
                       btnTextColor="text-white"
                       btnBorderColor="border-white"
                     /></a>
-                    
-                  </div>
                 </div>
               </div>
-              {/* Most Liked */}
+              
               <div
-                className=" border sm:w-1/2 flex-1 flex flex-col px-2  sm:py-1  sm:rounded-xl border-blue-50 bg-[url('https://i.pinimg.com/564x/78/38/e0/7838e0ba96b5e82a1fe516af74d329c4.jpg')] bg-cover sm:mx-1"
+                className=" md:mt-2 lg:mt-0 md:w-4/6 lg:w-1/2 flex-1 flex flex-col px-2  md:py-1  md:rounded-xl border-blue-50 bg-[url('https://i.pinimg.com/564x/78/38/e0/7838e0ba96b5e82a1fe516af74d329c4.jpg')] bg-cover md:mx-1"
               >
                 <div className="py-1 px-2 text-blue-500 font-bold  text-2xl">
                   <p>Upcoming Contests </p>
                 </div>
-                <div className="flex flex-col  md:w-11/12 md:ml-6 sm:flex-row gap-5 md:gap-10  ">
+                <div className="flex flex-col  md:w-11/12 md:ml-6 md:flex-row gap-5 md:gap-10  ">
                   {trendPosts &&
                     trendPosts.map((post) => (
                       <PostCard key={post._id} post={post} />

@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 const Tabs = () => {
   return (
     <>
-      <div className="flex flex-wrap md:w-1/4 mx-auto bg-blue-50 px-2 rounded-xl my-1 ">
+      <div className="flex md:w-1/2 lg:w-1/2 xl:w-1/4 mx-auto bg-blue-50 px-2 rounded-xl my-1 ">
         <div className="w-full">
           <ul
-            className=" flex mb-0 list-none lg:flex-wrap pt-3 pb-4 flex-row"
+            className=" flex mb-0 list-none lg:flex pt-3 pb-4 flex-row justify-center "
             role="tablist"
           >
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
