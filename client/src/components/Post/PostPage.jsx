@@ -152,9 +152,8 @@ export default function PostPage() {
               Help us correct it.
             </h1>
             <a
-              // to={{ pathname: "https://discord.gg/rbgRYhqR" }}
-              href="https://discord.gg/rbgRYhqR"
-              // target="_blank"
+              href="https://discord.gg/kKAsgsUuXe"
+              target="_blank"
             > <div    
             className={`relative inline-flex items-center justify-center mx-3 my-3 p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-blue-500   
             rounded-full shadow-md group`}

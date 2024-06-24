@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <div className="flex flex-col lg:gap-12 pb-28 px-3 max-w-6xl mx-auto  ">
+      <div className="flex flex-col  lg:gap-12 pb-28 px-3 max-w-6xl mx-auto  ">
         <div className="flex flex-row  items-center">
           <div>
             <h1 className="text-6xl font-bold lg:text-6xl">Welcome to</h1>
@@ -25,11 +25,11 @@ export default function Home() {
               GenPosium
             </h1>
           </div>
-          <div className="hidden  lg:block">
+          <div className="hidden md:block lg:block">
             <LotusCanvas />
           </div>
         </div>
-        <div className="lg:hidden block">
+        <div className="lg:hidden md:hidden block">
           <LotusMobileCanvas />
         </div>
       </div>
