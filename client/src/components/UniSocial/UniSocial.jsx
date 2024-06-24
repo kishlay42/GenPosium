@@ -64,7 +64,7 @@ const UniSocial = () => {
                 <h1 className=" px-3 text-4xl lg:text-4xl md:pr-56 lg:pr-0 font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl text-orange-700">
                   Help Us Connect Universities.
                 </h1>
-                <a href="https://discord.gg/T698FNgj" target="_blank">
+                <a href="https://discord.gg/kKAsgsUuXe" target="_blank">
                 <Button text="Contribute" />
                 </a>
               </div>
@@ -85,7 +85,7 @@ const UniSocial = () => {
                     <h1 className=" px-3 text-4xl lg:text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl  text-gray-100  ">
                       Explore<br/> your Favourite Universities.
                     </h1>
-                    <a href="https://discord.gg/T698FNgj" target="_blank"> <Button
+                    <a href="https://discord.gg/kKAsgsUuXe" target="_blank"> <Button
                       text="Explore"
                       hoverColor="bg-red-300"
                       btnTextColor="text-gray-50"

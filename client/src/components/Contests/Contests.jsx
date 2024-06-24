@@ -64,7 +64,7 @@ const Contests = () => {
                 <h1 className=" px-3 text-4xl lg:text-5xl md:pr-56 lg:pr-0 font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl text-blue-500  ">
                   Advertise Your Contest.  
                 </h1>
-                <a href="https://discord.gg/T698FNgj" target="_blank">   <Button
+                <a href="https://discord.gg/kKAsgsUuXe" target="_blank">   <Button
                   text="Add Contest"
                   hoverColor="bg-blue-500"
                   btnTextColor="text-blue-600"
@@ -89,7 +89,7 @@ const Contests = () => {
                     <h1 className=" px-3 text-4xl lg:text-5xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl text-white">
                       Explore More Upcoming Contests.
                     </h1>
-                    <a href="https://discord.gg/T698FNgj" target="_blank"><Button
+                    <a href="https://discord.gg/kKAsgsUuXe" target="_blank"><Button
                       text="Explore"
                       hoverColor="bg-black"
                       btnTextColor="text-white"
