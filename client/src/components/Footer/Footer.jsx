@@ -75,7 +75,7 @@ export default function Footer() {
           <span className="text-sm text-gray-500 sm:text-center">
             © 2024
             <Link to="#" className="hover:underline">
-              Kishlay Bhaskar
+              Genposium
             </Link>
             . All Rights Reserved.
           </span>
