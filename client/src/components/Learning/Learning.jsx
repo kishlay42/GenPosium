@@ -1,6 +1,6 @@
 import {  Button } from "../index";
 import PostCard from "../Post/PostCard";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {Spinner} from "flowbite-react";
 
 const Learning = () => {
@@ -35,13 +35,17 @@ const Learning = () => {
     }
   }, []);
   if(isLoading){
-    return <div><Spinner size="xl" /></div>
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Spinner color="pink" aria-label="Extra large spinner example" size="xl" />
+      </div>
+    );
 
   }
   return (
     <>
       <div>
-        <div className=" md:ml-20 lg:mx-auto my-1 mx-auto  lg:w-3/4 ">
+        <div className=" md:ml-20 lg:mx-auto my-1 mx-auto  lg:w-3/4 animate-y">
         <div className="flex  my-6 flex-wrap flex-col  lg:flex-row ">
             <div
               className="  border lg:w-2/4 md:w-11/12

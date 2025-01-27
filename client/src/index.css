@@ -48,3 +48,46 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+
+/* Initial state */
+.animate-x {
+  opacity: 0; /* Start completely invisible */
+  transform: translateX(15px); /* Set the initial offset */
+  display: inline-block; /* Ensure transform works correctly */
+  animation: animateOnX 1s ease-out 0.4s forwards; /* Delayed animation */
+}
+
+/* Keyframes for the animation */
+@keyframes animateOnX {
+  0% {
+      opacity: 0;
+      transform: translateX(15px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+
+
+/* Initial state */
+.animate-y {
+  opacity: 0; /* Start completely invisible */
+  transform: translateY(15px); /* Set the initial offset along the Y-axis */
+   /* Ensure transform works correctly */
+  animation: animateOnY 1s ease-out 0.4s forwards; /* Delayed animation */
+}
+
+/* Keyframes for the Y-axis animation */
+@keyframes animateOnY {
+  0% {
+      opacity: 0;
+      transform: translateY(15px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

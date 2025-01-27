@@ -1,7 +1,8 @@
-import React, { Suspense, useEffect, useState } from "react";
+import  { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Usables/Loader";
+// eslint-disable-next-line react/prop-types
 const Lotus = ({ isMobile }) => {
   const lotus = useGLTF("./lotus/scene.gltf");
 
@@ -29,7 +30,7 @@ const Lotus = ({ isMobile }) => {
       {/* <pointLight position={[10, 10, 10]} intensity={0.5} color='orange' /> */}
       <primitive
         object={lotus.scene}
-        scale={isMobile ? 4.5 : 4.5}
+        scale={isMobile ? 4.5 : 3.1}
         position={isMobile ? [0, -2.5, -1.5] : [0.5, -2.5, -1.0]}
         rotation={isMobile ? [-0.05, 1.2, 0] : [-0.05, 1.2, 0]}
         // style={isMobile ? {width: "80vw", height: "60vh"}:{ width: "40vw", height: "40vh", padding: "10px" }} // Set the width to 100% of the viewport width
@@ -66,7 +67,7 @@ const LotusCanvas = () => {
 
   return (
     <Canvas
-      style={{ width: "40vw", height: "40vh", padding: "10px" }} // Set the width to 100% of the viewport width
+      style={{ width: "42vw", height: "60vh" }} // Set the width to 100% of the viewport width
     //  className="w-80vw h-60vh " // Set the height to 50vh
       frameloop="demand"
       shadows

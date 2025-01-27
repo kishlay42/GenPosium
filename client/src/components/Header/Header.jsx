@@ -6,7 +6,6 @@ import { signoutSuccess } from "../../redux/user/userSlice";
 import { useEffect, useState } from "react";
 
 export default function Header() {
-  const path = useLocation().pathname;
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
