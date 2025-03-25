@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Alert,Spinner } from 'flowbite-react';
@@ -46,7 +45,7 @@ const Signin = () => {
   };
   return (
     <div className="flex lg:flex-row lg:ml-4 ">
-    <div className=" lg:w-1/2 hidden  lg:block"><TechCanvas/></div>
+    <div className=" lg:w-1/2 hidden lg:pl-32 lg:block"><TechCanvas/></div>
       <section className="flex flex-col md:flex-row lg:mb-48 mb-10 items-center lg:w-1/3 w-3/4 pt-4 mx-auto lg:mx-0 ">
         <div
           className="bg-white mx-auto rounded-xl w-full md:max-w-md lg:max-w-full md:w-3/4 xl:w-11/12  px-6 lg:px-16 xl:px-12

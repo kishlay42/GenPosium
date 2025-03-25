@@ -1,9 +1,23 @@
-import React, { Suspense, useEffect, useState } from "react";
+/* eslint-disable react/no-unknown-property */
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Usables/Loader";
-const Lotus = ({ isMobile }) => {
-  const lotus = useGLTF("./lotus/scene.gltf");
+// Preload the Draco-compressed model for faster loading
+useGLTF.preload("./lotus/scene-draco.gltf");
+
+const Lotus = () => {
+  // Load Draco-compressed model
+  const lotus = useGLTF("./lotus/scene-draco.gltf", true);
+
+  // Ensure materials & shadows work correctly
+  lotus.scene.traverse((child) => {
+    if (child.isMesh) {
+      child.castShadow = true;
+      child.receiveShadow = true;
+      child.material.needsUpdate = true;
+    }
+  });
 
   return (
     <mesh>
@@ -26,13 +40,11 @@ const Lotus = ({ isMobile }) => {
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
       />
-      {/* <pointLight position={[10, 10, 10]} intensity={0.5} color='orange' /> */}
       <primitive
         object={lotus.scene}
-        scale={isMobile ? 3.8 : 3}
-        position={isMobile ? [0, -2.5, -1.5] : [0, -2.75, -1.5]}
-        rotation={isMobile ? [0, 0, 0] : [-0.05, -0.2, 0]}
-        // style={isMobile ? {width: "80vw", height: "60vh"}:{ width: "40vw", height: "40vh", padding: "10px" }} // Set the width to 100% of the viewport width
+        scale={3.8 }
+        position={[0, -2.5, -1.5] }
+        rotation={[0, 0, 0] }
 
 
               />
@@ -41,32 +53,10 @@ const Lotus = ({ isMobile }) => {
 };
 
 const LotusMobileCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    // Remove the listener when the component is unmounted
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
 
   return (
     <Canvas
-    //   style={{ width: "90vw", height: "30vh", }} // Set the width to 100% of the viewport width
      className="w-80vw h-60vh " // Set the height to 50vh
       frameloop="demand"
       shadows
@@ -81,7 +71,7 @@ const LotusMobileCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Lotus isMobile={isMobile} />
+        <Lotus  />
       </Suspense>
 
       <Preload all />

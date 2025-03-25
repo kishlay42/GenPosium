@@ -1,13 +1,28 @@
-import  { Suspense, useEffect, useState } from "react";
+/* eslint-disable react/no-unknown-property */
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Usables/Loader";
-// eslint-disable-next-line react/prop-types
-const Lotus = ({ isMobile }) => {
-  const lotus = useGLTF("./lotus/scene.gltf");
+
+// Preload the Draco-compressed model for faster loading
+useGLTF.preload("./lotus/scene-draco.gltf");
+
+const Lotus = () => {
+  // Load Draco-compressed model
+  const lotus = useGLTF("./lotus/scene-draco.gltf", true);
+
+  // Ensure materials & shadows work correctly
+  lotus.scene.traverse((child) => {
+    if (child.isMesh) {
+      child.castShadow = true;
+      child.receiveShadow = true;
+      child.material.needsUpdate = true;
+    }
+  });
 
   return (
     <mesh>
+      {/* Original Lighting Setup */}
       <hemisphereLight intensity={1.5} groundColor="pink" />
       <directionalLight color="white" position={[5, 10, 0]} intensity={1.5} />
       <directionalLight color="red" position={[5, -10, 0]} intensity={4.5} />
@@ -18,6 +33,7 @@ const Lotus = ({ isMobile }) => {
       <directionalLight color="orange" position={[0, -2, 0]} intensity={3.5} />
       <directionalLight color="pink" position={[0, -2, 0]} intensity={3.5} />
 
+      {/* Spot Light */}
       <spotLight
         position={[-30, 10, 10]}
         angle={0.5}
@@ -27,64 +43,38 @@ const Lotus = ({ isMobile }) => {
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
       />
-      {/* <pointLight position={[10, 10, 10]} intensity={0.5} color='orange' /> */}
+
+      {/* Load Lotus Model */}
       <primitive
         object={lotus.scene}
-        scale={isMobile ? 4.5 : 3.1}
-        position={isMobile ? [0, -2.5, -1.5] : [0.5, -2.5, -1.0]}
-        rotation={isMobile ? [-0.05, 1.2, 0] : [-0.05, 1.2, 0]}
-        // style={isMobile ? {width: "80vw", height: "60vh"}:{ width: "40vw", height: "40vh", padding: "10px" }} // Set the width to 100% of the viewport width
-
-
-              />
+        scale={1.8} // Reduced from 3.1 to 2.5
+        position={[0.1, -1.8, -1.0]} // Slightly adjusted position
+        rotation={[-0.05, 1.2, 0]}
+      />
     </mesh>
   );
 };
 
 const LotusCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    // Remove the listener when the component is unmounted
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
-
   return (
     <Canvas
-      style={{ width: "42vw", height: "60vh" }} // Set the width to 100% of the viewport width
-    //  className="w-80vw h-60vh " // Set the height to 50vh
+      style={{ width: "47vw", height: "60vh" ,cursor: "grab" }} // Set the height to 60vh
       frameloop="demand"
       shadows
       dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [0, 10, 0], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           autoRotate
           enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI / 2.5} 
+          minPolarAngle={Math.PI / 2.5} 
+          target={[0, -1.5, -1.0]} 
         />
-        <Lotus isMobile={isMobile} />
+        <Lotus />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );

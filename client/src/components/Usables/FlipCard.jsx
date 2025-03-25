@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const FlipCard = () => {
@@ -10,8 +9,9 @@ const FlipCard = () => {
             <div className=" h-96 w-72">
               <img
                 className=" h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
-                src="https://i.pinimg.com/564x/39/33/d3/3933d37db4f56c98d90fe1290db9e53b.jpg"
+                src="./images/ppl1.webp"
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
@@ -32,8 +32,9 @@ const FlipCard = () => {
             <div className="h-96 w-72">
               <img
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
-                src="https://i.pinimg.com/564x/2d/4f/51/2d4f51963d725681a7e3d4f65a5e82f6.jpg"
+                src="./images/ppl2.webp"
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
@@ -55,8 +56,9 @@ const FlipCard = () => {
             <div className="h-96 w-72">
               <img
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
-                src="https://i.pinimg.com/564x/d0/eb/af/d0ebafa827578d7d786fa38f4e8abee7.jpg"
+                src="./images/ppl3.webp"
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>

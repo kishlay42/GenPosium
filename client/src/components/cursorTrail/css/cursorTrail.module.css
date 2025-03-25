@@ -1,0 +1,21 @@
+.cursorTrail {
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-45%, -45%);
+  background-color: white;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 1000;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.shrink {
+  width: 0.5em !important;
+  height: 0.5em !important;
+}
+
+@media (max-width: 768px) {
+  .cursorTrail {
+    display: none;
+  }
+}

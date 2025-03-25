@@ -19,6 +19,7 @@ import OnlyAdminPrivateRoute from './Post/OnlyAdminPrivateRoute';
 import CreatePost from './Post/CreatePost';
 import UpdatePost from './Post/UpdatePost';
 import PostPage from './Post/PostPage';
+import CursorTrail from './cursorTrail/CursorTrail';
 export {
     Header,
     Tabs,
@@ -40,5 +41,6 @@ export {
     OnlyAdminPrivateRoute,
     CreatePost,
     UpdatePost,
-    PostPage
+    PostPage,
+    CursorTrail
   };
