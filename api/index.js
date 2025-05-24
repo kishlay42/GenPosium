@@ -7,6 +7,28 @@ import postRoutes from './routes/post.route.js';
 import commentRoutes from './routes/comment.route.js';
 import cookieParser from 'cookie-parser';
 import path from'path'
+import axios from "axios";
+// This code is used to reload the website at a specified interval
+//col start issue fix 
+const url = `https://genposium.onrender.com`;
+const interval = 30000;
+
+function reloadWebsite() {
+  axios
+    .get(url)
+    .then((response) => {
+      console.log("website reloded");
+    })
+    .catch((error) => {
+      console.error(`Error : ${error.message}`);
+    });
+}
+
+setInterval(reloadWebsite, interval);
+
+// End of code to reload the website
+// Importing necessary modules and setting up the server
+
 dotenv.config();
 mongoose
   .connect(process.env.MONGO)
