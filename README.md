@@ -17,7 +17,7 @@ The project is built using the following technologies:
 To run the application, follow these steps:
 
 1. Clone the repository with `git clone https://github.com/kishlay42/GenPosium.git`
-2. Install the dependencies with `npm install` and `cd client npm Install`.
+2. Install the dependencies with `npm install` and `cd client npm install`.
 3. Run the following command to boot up the local server ready to receive requests `npm start`
 
 <br/>
