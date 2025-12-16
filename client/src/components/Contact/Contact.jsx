@@ -81,7 +81,7 @@ export default function Contact() {
                                     />
                                 </svg>
                                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    kishlayk7357@gmail.com
+                                    admin@genposium.com
                                 </div>
                             </div>
                         </div>
